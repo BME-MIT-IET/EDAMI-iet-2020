@@ -1,5 +1,5 @@
 flake8
-python-coveralls
+coveralls
 coverage
 nose
 pytest
