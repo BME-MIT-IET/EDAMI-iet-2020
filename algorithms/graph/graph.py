@@ -56,7 +56,7 @@ class DirectedEdge(object):
         return '({0} -> {1})'.format(self.nf, self.nt)
 
 class DirectedGraph(object):
-    def __init__(self, load_dict={}):
+    def __init__(self, load_dict=None):
         self.nodes = []
         self.edges = []
         self.adjmt = {}
