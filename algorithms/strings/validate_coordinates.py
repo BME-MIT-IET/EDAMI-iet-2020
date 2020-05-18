@@ -31,7 +31,7 @@ def is_valid_coordinates_0(coordinates):
     try:
         latitude = float(l[0])
         longitude = float(l[1])
-    except:
+    except ValueError:
         return False
     return -90 <= latitude <= 90 and -180 <= longitude <= 180
 
