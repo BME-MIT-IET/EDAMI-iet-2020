@@ -7,8 +7,8 @@ def insertion_sort(arr, simulation=False):
     if simulation:
         print("iteration",iteration,":",*arr)
         
-    for i in range(len(arr)):
-        cursor = arr[i]
+    for i, item in enumerate(arr):
+        cursor = item
         pos = i
         
         while pos > 0 and arr[pos - 1] > cursor:
@@ -19,7 +19,7 @@ def insertion_sort(arr, simulation=False):
         arr[pos] = cursor
         
         if simulation:
-                iteration = iteration + 1
-                print("iteration",iteration,":",*arr)
+             iteration = iteration + 1
+             print("iteration",iteration,":",*arr)
 
     return arr

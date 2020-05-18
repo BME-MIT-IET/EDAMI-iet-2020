@@ -17,7 +17,7 @@ def selection_sort(arr, simulation=False):
         arr[minimum], arr[i] = arr[i], arr[minimum]
         
         if simulation:
-                iteration = iteration + 1
-                print("iteration",iteration,":",*arr)
+            iteration = iteration + 1
+            print("iteration",iteration,":",*arr)
             
     return arr

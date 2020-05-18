@@ -10,8 +10,8 @@ def max_heap_sort(arr, simulation=False):
         iteration = max_heapify(arr, i, simulation, iteration)
 
     if simulation:
-                iteration = iteration + 1
-                print("iteration",iteration,":",*arr)
+        iteration = iteration + 1
+        print("iteration",iteration,":",*arr)
     return arr
 
 
