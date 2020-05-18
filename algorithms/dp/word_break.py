@@ -21,15 +21,15 @@ True False False False
 
 
 # TC: O(N^2)  SC: O(N)
-def word_break(s, word_dict):
+def word_break(string, word_dict):
     """
-    :type s: str
+    :type string: str
     :type word_dict: Set[str]
     :rtype: bool
     """
-    dp = [False] * (len(s)+1)
+    dp = [False] * (len(string)+1)
     dp[0] = True
-    for i in range(1, len(s)+1):
+    for i in range(1, len(string)+1):
         for j in range(0, i):
             if dp[j] and s[j:i] in word_dict:
                 dp[i] = True
