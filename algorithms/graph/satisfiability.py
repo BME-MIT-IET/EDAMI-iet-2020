@@ -74,24 +74,24 @@ def scc(graph):
     return vertex_scc
 
 
-def build_graph(formula):
+def build_graph(_formula):
     ''' Builds the implication graph from the formula '''
     graph = {}
 
-    for clause in formula:
+    for clause in _formula:
         for (lit, _) in clause:
             for neg in [False, True]:
                 graph[(lit, neg)] = []
 
-    for ((a_lit, a_neg), (b_lit, b_neg)) in formula:
+    for ((a_lit, a_neg), (b_lit, b_neg)) in _formula:
         add_edge(graph, (a_lit, a_neg), (b_lit, not b_neg))
         add_edge(graph, (b_lit, b_neg), (a_lit, not a_neg))
 
     return graph
 
 
-def solve_sat(formula):
-    graph = build_graph(formula)
+def solve_sat(_formula):
+    graph = build_graph(_formula)
     vertex_scc = scc(graph)
 
     for (var, _) in graph.items():
