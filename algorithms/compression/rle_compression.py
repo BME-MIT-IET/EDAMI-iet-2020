@@ -32,8 +32,8 @@ def encode_rle(input):
         else:
             # Otherwise increment the counter
             count += 1
-    else:
-        return encoded_str + (str(count) + prev_ch)
+
+    return encoded_str + (str(count) + prev_ch)
 
 
 def decode_rle(input):
