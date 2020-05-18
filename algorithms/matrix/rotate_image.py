@@ -18,7 +18,7 @@ def rotate(mat):
     if not mat:
         return mat
     mat.reverse()
-    for i in range(len(mat)):
+    for i, _ in enumerate(mat):
         for j in range(i):
             mat[i][j], mat[j][i] = mat[j][i], mat[i][j]
     return mat
