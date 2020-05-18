@@ -17,7 +17,6 @@ def top_1(arr):
     #reserve each value which first appears on keys
     #reserve how many time each value appears by index number on values
     result = []
-    f_val = 0
 
     for i in arr:
         if i in values:
