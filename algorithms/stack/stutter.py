@@ -15,9 +15,9 @@ import collections
 
 def first_stutter(stack):
     storage_stack = []
-    for i in range(len(stack)):
+    for _ in range(len(stack)):
         storage_stack.append(stack.pop())
-    for i in range(len(storage_stack)):
+    for _ in range(len(storage_stack)):
         val = storage_stack.pop()
         stack.append(val)
         stack.append(val)

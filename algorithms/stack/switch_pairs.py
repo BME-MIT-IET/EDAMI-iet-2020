@@ -22,9 +22,9 @@ import collections
 
 def first_switch_pairs(stack):
     storage_stack = []
-    for i in range(len(stack)):
+    for _ in range(len(stack)):
         storage_stack.append(stack.pop())
-    for i in range(len(storage_stack)):
+    for _ in range(len(storage_stack)):
         if len(storage_stack) == 0:
             break
         first = storage_stack.pop()
