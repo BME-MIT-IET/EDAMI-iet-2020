@@ -94,7 +94,7 @@ def solve_sat(formula):
     graph = build_graph(formula)
     vertex_scc = scc(graph)
 
-    for (var, _) in graph:
+    for (var, _) in graph.items():
         if vertex_scc[(var, False)] == vertex_scc[(var, True)]:
             return None  # The formula is contradictory
 
