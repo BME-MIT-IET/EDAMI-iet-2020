@@ -48,10 +48,11 @@ class AbstractHeap(metaclass=ABCMeta):
     def min_child(self,i):
         pass
     @abstractmethod
-    def remove_min(self,i):
+    def remove_min(self):
         pass
 class BinaryHeap(AbstractHeap):
     def __init__(self):
+        super(BinaryHeap, self).__init__()
         self.currentSize = 0
         self.heap = [(0)]
 

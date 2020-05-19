@@ -17,8 +17,8 @@ def __choose_state(state_map):
 
 def next_state(chain, current_state):
     next_state_map = chain.get(current_state)
-    next_state = __choose_state(next_state_map)
-    return next_state
+    _next_state = __choose_state(next_state_map)
+    return _next_state
 
 def iterating_markov_chain(chain, state):
     while True:

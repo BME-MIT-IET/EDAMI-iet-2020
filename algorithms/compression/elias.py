@@ -6,7 +6,7 @@ that includes Elias γ code when calculating.
 Both were developed by Peter Elias.
 
 """
-from math import log,ceil
+from math import log
 
 log2 = lambda x: log(x,2)
 

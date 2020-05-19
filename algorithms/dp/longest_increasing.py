@@ -67,9 +67,9 @@ def longest_increasing_subsequence_optimized(sequence):
         return max(get_max(p<<1, l, mid, s, e), get_max((p<<1)|1, mid+1, r, s, e))
     ans = 0
     for x in sequence:
-       cur = get_max(1, 0, mx, 0, x-1)+1
-       ans = max(ans, cur)
-       update(1, 0, mx, x, cur)
+        cur = get_max(1, 0, mx, 0, x-1)+1
+        ans = max(ans, cur)
+        update(1, 0, mx, x, cur)
     return ans
 
 def longest_increasing_subsequence_optimized2(sequence):

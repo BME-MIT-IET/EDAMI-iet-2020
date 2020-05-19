@@ -36,16 +36,16 @@ g.add_edge(1, 2)
 g.add_edge(2, 0)
 g.add_edge(2, 3)
 g.add_edge(3, 3)
- 
+
 u =1; v = 3
- 
+
 if g.is_reachable(u, v):
-    print("There is a path from %d to %d" % (u,v))
+	print("There is a path from %d to %d" % (u,v))
 else :
-    print("There is no path from %d to %d" % (u,v))
- 
+	print("There is no path from %d to %d" % (u,v))
+
 u = 3; v = 1
 if g.is_reachable(u, v) :
-    print("There is a path from %d to %d" % (u,v))
+	print("There is a path from %d to %d" % (u,v))
 else :
-    print("There is no path from %d to %d" % (u,v))
+	print("There is no path from %d to %d" % (u,v))

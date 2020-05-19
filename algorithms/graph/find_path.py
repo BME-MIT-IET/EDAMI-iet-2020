@@ -6,7 +6,7 @@ myGraph = {'A': ['B', 'C'],
          'F': ['C']}
 
 # find path from start to end using recursion with backtracking
-def find_path(graph, start, end, path=[]):
+def find_path(graph, start, end, path=None):
     path = path + [start]
     if (start == end):
         return path
@@ -19,7 +19,7 @@ def find_path(graph, start, end, path=[]):
     return None
 
 # find all path
-def find_all_path(graph, start, end, path=[]):
+def find_all_path(graph, start, end, path=None):
     path = path + [start]
     if (start == end):
         return [path]
@@ -33,7 +33,7 @@ def find_all_path(graph, start, end, path=[]):
                 paths.append(newpath)
     return paths
 
-def find_shortest_path(graph, start, end, path=[]):
+def find_shortest_path(graph, start, end, path=None):
     path = path + [start]
     if start == end:
         return path
