@@ -44,7 +44,8 @@ class Solution(object):
         :type key: int
         :rtype: TreeNode
         """
-        if not root: return None
+        if not root:
+            return None
 
         if root.val == key:
             if root.left:
@@ -60,7 +61,7 @@ class Solution(object):
                 return root.right
         # If left or right child got deleted, the returned root is the child of the deleted node.
         elif root.val > key:
-            root.left = self.deleteNode(root.left, key)
+            root.left = self.delete_node(root.left, key)
         else:
-            root.right = self.deleteNode(root.right, key)
+            root.right = self.delete_node(root.right, key)
         return root

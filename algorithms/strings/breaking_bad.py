@@ -38,7 +38,7 @@ def match_symbol(words, symbols):
 def match_symbol_1(words, symbols):
     res = []
     # reversely sort the symbols according to their lengths.
-    symbols = sorted(symbols, key=lambda _: len(_), reverse=True)
+    symbols = sorted(symbols, key=lambda symbol: len(symbol), reverse=True)
     for word in words:
         for symbol in symbols:
             word_replaced = ''

@@ -12,7 +12,7 @@ def distance(x,y):
     assert len(x) == len(y), "The vector must have same length"
     result = ()
     sum = 0
-    for i in range(len(x)):
+    for i, _ in enumerate(x):
         result += (x[i] -y[i],)
     for component in result:
         sum += component**2
