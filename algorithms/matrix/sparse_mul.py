@@ -24,7 +24,7 @@ AB = | -1 0 3 | x | 0 0 0 | = | -7 0 3 |
 
 
 # Python solution without table (~156ms):
-def multiply(a, b):
+def multiply(self, a, b):
     """
     :type A: List[List[int]]
     :type B: List[List[int]]
