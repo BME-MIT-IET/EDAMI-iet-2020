@@ -15,4 +15,4 @@ def euler_totient(n):
             result -= result // i
     if n > 1:
         result -= result // n
-        return result
+    return result
