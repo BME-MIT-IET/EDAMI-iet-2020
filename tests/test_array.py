@@ -335,6 +335,7 @@ class TestRotateArray(unittest.TestCase):
         self.assertListEqual(rotate_v3([1, 2, 3, 4, 5, 6, 7], k=7),
                                        [1, 2, 3, 4, 5, 6, 7])
         self.assertListEqual(rotate_v3([1, 2], k=111), [2, 1])
+        self.assertEqual(rotate_v3(None, k=1), None)
 
 
 class TestSummaryRanges(unittest.TestCase):
