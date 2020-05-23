@@ -14,7 +14,8 @@ from algorithms.dp import (
     longest_increasing_subsequence,
     longest_increasing_subsequence_optimized,
     longest_increasing_subsequence_optimized2,
-    int_divide
+    int_divide,
+    num_decodings, num_decodings2
 )
 
 
@@ -163,6 +164,12 @@ class TestLongestCommonSubsequence(unittest.TestCase):
         self.assertEqual(longest_common_subsequence('', ''), 0)
         self.assertEqual(longest_common_subsequence('aaa', 'zzz'), 0)
 
+class TestNumDecodings(unittest.TestCase):
+    def test_num_decodings(self):
+        self.assertEqual(num_decodings('5'), 1)
+        self.assertEqual(num_decodings2('5'), 1)
+        self.assertEqual(num_decodings('12'), 2)
+        self.assertEqual(num_decodings2('12'), 2)
 
 if __name__ == '__main__':
     unittest.main()
