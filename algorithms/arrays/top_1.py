@@ -1,7 +1,7 @@
 """
 This algorithm receives an array and returns most_frequent_value
 Also, sometimes it is possible to have multiple 'most_frequent_value's,
-so this function returns a list. This result can be used to find a 
+so this function returns a list. This result can be used to find a
 representative value in an array.
 
 This algorithm gets an array, makes a dictionary of it,
@@ -25,12 +25,9 @@ def top_1(arr):
             values[i] = 1
 
     f_val = max(values.values())
-        
+
     for i in values.keys():
         if values[i] == f_val:
             result.append(i)
-        else:
-            continue
-    
+
     return result
-    
