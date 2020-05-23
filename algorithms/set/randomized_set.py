@@ -41,30 +41,3 @@ class RandomizedSet():
 
     def random_element(self):
         return random.choice(self.elements)
-
-
-def __test():
-    rset = RandomizedSet()
-    ground_truth = set()
-    n = 64
-
-    for i in range(n):
-        rset.insert(i)
-        ground_truth.add(i)
-
-    # Remove a half
-    for i in random.sample(range(n), n // 2):
-        rset.remove(i)
-        ground_truth.remove(i)
-
-    print(len(ground_truth), len(rset.elements), len(rset.index_map))
-    for i in ground_truth:
-        assert(i == rset.elements[rset.index_map[i]])
-
-    for i in range(n):
-        print(rset.random_element(), end=' ')
-    print()
-
-
-if __name__ == "__main__":
-    __test()
