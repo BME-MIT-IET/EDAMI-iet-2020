@@ -83,6 +83,7 @@ class TestFib(unittest.TestCase):
     def test_fib_iter(self):
         self.assertEqual(fib_iter(10), 55)
         self.assertEqual(fib_iter(30), 832040)
+        self.assertEqual(fib_iter(0), 0)
 
 
 class TestHosoyaTriangle(unittest.TestCase):
