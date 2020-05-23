@@ -33,6 +33,21 @@ class TestRandomizedSet(unittest.TestCase):
         for i in ground_truth:
             self.assertEqual(i, rset.elements[rset.index_map[i]])
 
+    def test_invalid_insert_delete(self):
+        rset = RandomizedSet()
+        rset.insert(10)
+        self.assertListEqual(rset.elements, [10])
+        rset.remove(12)
+        self.assertListEqual(rset.elements, [10])
+        rset.insert(10)
+        self.assertListEqual(rset.elements, [10])
+
+    def test_random_choice(self):
+        rset = RandomizedSet()
+        for i in range(10):
+            rset.insert(i)
+        self.assertTrue(rset.random_element() in range(10))
+
 class TestSetCovering(unittest.TestCase):
     def test_powerset(self):
         self.assertEqual(
