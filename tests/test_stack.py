@@ -134,6 +134,21 @@ class TestStack(unittest.TestCase):
 
         self.assertTrue(stack.is_empty())
 
+    def test_invalid_access(self):
+        with self.assertRaises(IndexError):
+            stack = ArrayStack()
+            top = stack.peek()
+        with self.assertRaises(IndexError):
+            stack = ArrayStack()
+            top = stack.pop()
+        with self.assertRaises(IndexError):
+            stack = LinkedListStack()
+            top = stack.peek()
+        with self.assertRaises(IndexError):
+            stack = LinkedListStack()
+            top = stack.pop()
+
+
 class TestOrderedStack(unittest.TestCase):
     def test_OrderedStack(self):
         stack = OrderedStack()
