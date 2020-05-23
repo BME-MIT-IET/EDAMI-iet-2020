@@ -56,10 +56,3 @@ def length_longest_path(input):
         if '.' in s:    # update maxlen only when it is a file
             max_len = max(max_len, curr_len-1)    # -1 is to minus one '/'
     return max_len
-
-st= "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdirectory1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext"
-st2 = "a\n\tb1\n\t\tf1.txt\n\taaaaa\n\t\tf2.txt"
-print("path:", st2)
-
-print("answer:", length_longest_path(st2))
-

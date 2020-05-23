@@ -23,9 +23,3 @@ class ZigZagIterator:
         """
         if self.queue: return True
         return False
-
-l1 = [1, 2]
-l2 = [3, 4, 5, 6]
-it = ZigZagIterator(l1, l2)
-while it.has_next():
-    print(it.next())

@@ -11,7 +11,7 @@ from algorithms.bit import (
     single_number3,
     subsets,
     get_bit, set_bit, clear_bit, update_bit,
-    int_to_bytes_big_endian, int_to_bytes_little_endian, 
+    int_to_bytes_big_endian, int_to_bytes_little_endian,
     bytes_big_endian_to_int, bytes_little_endian_to_int,
     swap_pair,
     find_difference,
@@ -187,13 +187,13 @@ class TestSuite(unittest.TestCase):
 
     def test_int_to_bytes_big_endian(self):
         self.assertEqual(b'\x11', int_to_bytes_big_endian(17))
-    
+
     def test_int_to_bytes_little_endian(self):
         self.assertEqual(b'\x11', int_to_bytes_little_endian(17))
 
     def test_bytes_big_endian_to_int(self):
         self.assertEqual(17, bytes_big_endian_to_int(b'\x11'))
-    
+
     def test_bytes_little_endian_to_int(self):
         self.assertEqual(17, bytes_little_endian_to_int(b'\x11'))
 
@@ -211,12 +211,14 @@ class TestSuite(unittest.TestCase):
         self.assertFalse(has_alternative_bit(7))
         self.assertFalse(has_alternative_bit(11))
         self.assertTrue(has_alternative_bit(10))
+        self.assertTrue(has_alternative_bit(0))
 
     def test_has_alternative_bit_fast(self):
         self.assertTrue(has_alternative_bit_fast(5))
         self.assertFalse(has_alternative_bit_fast(7))
         self.assertFalse(has_alternative_bit_fast(11))
         self.assertTrue(has_alternative_bit_fast(10))
+        self.assertTrue(has_alternative_bit_fast(0))
 
     def test_insert_one_bit(self):
         """
