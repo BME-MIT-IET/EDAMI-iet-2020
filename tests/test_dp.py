@@ -15,7 +15,8 @@ from algorithms.dp import (
     longest_increasing_subsequence_optimized,
     longest_increasing_subsequence_optimized2,
     int_divide,
-    num_decodings, num_decodings2
+    num_decodings, num_decodings2,
+    word_break
 )
 
 
@@ -170,6 +171,17 @@ class TestNumDecodings(unittest.TestCase):
         self.assertEqual(num_decodings2('5'), 1)
         self.assertEqual(num_decodings('12'), 2)
         self.assertEqual(num_decodings2('12'), 2)
+
+class TestWordBreak(unittest.TestCase):
+    def test_word_break_found(self):
+        string = "redrum"
+        dictionary = ["red", "rum"]
+        self.assertTrue(word_break(string, dictionary))
+
+    def test_word_break_not_found(self):
+        string = "redrum"
+        dictionary = ["redd", "rum"]
+        self.assertFalse(word_break(string, dictionary))
 
 if __name__ == '__main__':
     unittest.main()

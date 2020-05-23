@@ -31,14 +31,7 @@ def word_break(string, word_dict):
     dp[0] = True
     for i in range(1, len(string)+1):
         for j in range(0, i):
-            if dp[j] and s[j:i] in word_dict:
+            if dp[j] and string[j:i] in word_dict:
                 dp[i] = True
                 break
     return dp[-1]
-
-
-if __name__ == "__main__":
-    s = "keonkim"
-    dic = ["keon", "kim"]
-
-    print(word_break(s, dic))
