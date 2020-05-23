@@ -4,7 +4,8 @@ from algorithms.queues import (
     ArrayQueue, LinkedListQueue,
     max_sliding_window,
     reconstruct_queue,
-    PriorityQueue
+    PriorityQueue,
+    MovingAverage
 )
 
 
@@ -101,6 +102,14 @@ class TestPriorityQueue(unittest.TestCase):
         queue.push(2)
         self.assertEqual(4, queue.size())
         self.assertEqual(2, queue.pop())
+
+class TestMovingAverage(unittest.TestCase):
+    def test_MovingAverage(self):
+        m = MovingAverage(3)
+        self.assertEqual(m.next(1), 1)
+        self.assertEqual(m.next(10), (1 + 10) / 2)
+        self.assertEqual(m.next(3), (1 + 10 + 3) / 3)
+        self.assertEqual(m.next(5), (10 + 3 + 5) / 3)
 
 
 if __name__ == "__main__":
