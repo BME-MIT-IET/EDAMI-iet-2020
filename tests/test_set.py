@@ -54,3 +54,12 @@ class TestSetCovering(unittest.TestCase):
         greedy_cost = sum(costs[s] for s in greedy_cover)
         self.assertEqual(greedy_cover, ['S3', 'S2'])
         self.assertEqual(greedy_cost, 13)
+
+    def test_set_no_cover(self):
+        universe = {1, 2, 3, 4, 5}
+        subsets = {'S1': {1, 3}, 'S2': {2, 5}, 'S3': {1, 3, 2}}
+        costs = {'S1': 5, 'S2': 10, 'S3': 3}
+        optimal_cover = optimal_set_cover(universe, subsets, costs)
+        greedy_cover = greedy_set_cover(universe, subsets, costs)
+        self.assertEqual(optimal_cover, None)
+        self.assertEqual(greedy_cover, None)
