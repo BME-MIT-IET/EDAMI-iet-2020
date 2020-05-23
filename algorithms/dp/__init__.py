@@ -9,6 +9,7 @@ from .hosoya_triangle import *
 from .house_robber import *
 from .job_scheduling import *
 from .knapsack import *
+from .longest_common_subsequence import *
 from .longest_increasing import *
 from .matrix_chain_order import *
 from .max_product_subarray import *
