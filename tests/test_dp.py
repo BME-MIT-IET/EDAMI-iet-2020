@@ -10,6 +10,7 @@ from algorithms.dp import (
     house_robber,
     Job, schedule,
     Item, get_maximum_value,
+    longest_common_subsequence,
     longest_increasing_subsequence,
     longest_increasing_subsequence_optimized,
     longest_increasing_subsequence_optimized2,
@@ -84,7 +85,7 @@ class TestFib(unittest.TestCase):
 class TestHosoyaTriangle(unittest.TestCase):
     """[summary]
     Test for the file hosoya_triangle
-    
+
     Arguments:
         unittest {[type]} -- [description]
     """
@@ -154,6 +155,13 @@ class TestIntDivide(unittest.TestCase):
         self.assertEqual(5, int_divide(4))
         self.assertEqual(42, int_divide(10))
         self.assertEqual(204226, int_divide(50))
+
+class TestLongestCommonSubsequence(unittest.TestCase):
+    def test_longest_common_subsequence(self):
+        self.assertEqual(longest_common_subsequence('abcdgh', 'aedfhr'), 3)
+        self.assertEqual(longest_common_subsequence('abc', 'adbdcd'), 3)
+        self.assertEqual(longest_common_subsequence('', ''), 0)
+        self.assertEqual(longest_common_subsequence('aaa', 'zzz'), 0)
 
 
 if __name__ == '__main__':
