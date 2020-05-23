@@ -18,7 +18,6 @@ is_match("aa", ".*") → true
 is_match("ab", ".*") → true
 is_match("aab", "c*a*b") → true
 """
-import unittest
 
 class Solution(object):
     def is_match(self, s, p):
@@ -55,54 +54,3 @@ class Solution(object):
                         matches[i][j] |= matches[i - 1][j]
 
         return matches[-1][-1]
-
-class TestSolution(unittest.TestCase):
-    def test_none_0(self):
-        s = ""
-        p = ""
-        self.assertTrue(Solution().is_match(s, p))
-
-    def test_none_1(self):
-        s = ""
-        p = "a"
-        self.assertFalse(Solution().is_match(s, p))
-
-    def test_no_symbol_equal(self):
-        s = "abcd"
-        p = "abcd"
-        self.assertTrue(Solution().is_match(s, p))
-
-    def test_no_symbol_not_equal_0(self):
-        s = "abcd"
-        p = "efgh"
-        self.assertFalse(Solution().is_match(s, p))
-
-    def test_no_symbol_not_equal_1(self):
-        s = "ab"
-        p = "abb"
-        self.assertFalse(Solution().is_match(s, p))
-
-    def test_symbol_0(self):
-        s = ""
-        p = "a*"
-        self.assertTrue(Solution().is_match(s, p))
-
-    def test_symbol_1(self):
-        s = "a"
-        p = "ab*"
-        self.assertTrue(Solution().is_match(s, p))
-
-    def test_symbol_2(self):
-        # E.g.
-        #   s a b b
-        # p 1 0 0 0
-        # a 0 1 0 0
-        # b 0 0 1 0
-        # * 0 1 1 1
-        s = "abb"
-        p = "ab*"
-        self.assertTrue(Solution().is_match(s, p))
-
-
-if __name__ == "__main__":
-    unittest.main()
