@@ -7,7 +7,8 @@ from algorithms.stack import (
     is_valid,
     simplify_path,
     ArrayStack, LinkedListStack,
-    OrderedStack
+    OrderedStack,
+    length_longest_path
 )
 
 import unittest
@@ -146,6 +147,10 @@ class TestOrderedStack(unittest.TestCase):
         self.assertEqual(4, stack.peek())
         self.assertEqual(3, stack.size())
 
+class TestLongestPathLength(unittest.TestCase):
+    def test_length_longest_path(self):
+        tree = "a\n\tb1\n\t\tf1.txt\n\taaaaa\n\t\tf2.txt"
+        self.assertEqual(length_longest_path(tree), 14)
 
 if __name__ == "__main__":
     unittest.main()
