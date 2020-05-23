@@ -153,6 +153,9 @@ class TestLongestNonRepeat(unittest.TestCase):
         string = "asjrgapa"
         self.assertEqual(longest_non_repeat_v1(string), 6)
 
+        string = ""
+        self.assertEqual(longest_non_repeat_v1(string), 0)
+
     def test_longest_non_repeat_v2(self):
 
         string = "abcabcbb"
@@ -169,9 +172,12 @@ class TestLongestNonRepeat(unittest.TestCase):
 
         string = "asjrgapa"
         self.assertEqual(longest_non_repeat_v2(string), 6)
-    
+
+        string = ""
+        self.assertEqual(longest_non_repeat_v2(string), 0)
+
     def test_get_longest_non_repeat_v1(self):
-        
+
         string = "abcabcbb"
         self.assertEqual(get_longest_non_repeat_v1(string), (3, 'abc'))
 
@@ -187,8 +193,11 @@ class TestLongestNonRepeat(unittest.TestCase):
         string = "asjrgapa"
         self.assertEqual(get_longest_non_repeat_v1(string), (6, 'sjrgap'))
 
+        string = ""
+        self.assertEqual(get_longest_non_repeat_v1(string), (0, ''))
+
     def test_get_longest_non_repeat_v2(self):
-        
+
         string = "abcabcbb"
         self.assertEqual(get_longest_non_repeat_v2(string), (3, 'abc'))
 
@@ -203,6 +212,9 @@ class TestLongestNonRepeat(unittest.TestCase):
 
         string = "asjrgapa"
         self.assertEqual(get_longest_non_repeat_v2(string), (6, 'sjrgap'))
+
+        string = ""
+        self.assertEqual(get_longest_non_repeat_v2(string), (0, ''))
 
 
 class TestMaxOnesIndex(unittest.TestCase):
