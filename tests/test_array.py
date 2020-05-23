@@ -348,6 +348,7 @@ class TestSummaryRanges(unittest.TestCase):
                              [(-5, -3), (1, 2), (4, 6)])
         self.assertListEqual(summarize_ranges([-2, -1, 0, 1, 2]),
                              [(-2, 2)])
+        self.assertListEqual(summarize_ranges([2]), ["2"])
 
 
 class TestThreeSum(unittest.TestCase):
