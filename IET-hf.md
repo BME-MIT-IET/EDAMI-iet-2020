@@ -6,22 +6,22 @@ Ha tesztelni akarjuk az implementáció egy specifikus részét, akkor azt a kö
 
 Ha az összes tesztet szeretnénk lefuttatni, akkor azt a következő módon tehetjük meg, és a következő eredményt kapjuk:
 
-![kep2](images\kep2.PNG)
+![kep2](https://raw.githubusercontent.com/BME-MIT-IET/EDAMI-iet-2020/master/images/kep2.PNG)
 
 
 Ekkor elindulnak a tesztek futásai, majd a végén láthatjuk a kapott eredményt:
 
-![kep3](images\kep3.PNG)
+![kep3](https://raw.githubusercontent.com/BME-MIT-IET/EDAMI-iet-2020/master/images/kep3.PNG)
 
 
 A könyvtárat egy egyszerűbb példakóddal is kipróbálhatjuk:
 
-![kep4](images\kep4.PNG)
+![kep4](https://raw.githubusercontent.com/BME-MIT-IET/EDAMI-iet-2020/master/images/kep4.PNG)
 
 
 Ezt futtatva láthatjuk a helyesen kapott eredményt:
 
-![kep5](images\kep5.PNG)
+![kep5](https://raw.githubusercontent.com/BME-MIT-IET/EDAMI-iet-2020/master/images/kep5.PNG)
 
 ## Összefoglalás
 
