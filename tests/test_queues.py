@@ -4,7 +4,9 @@ from algorithms.queues import (
     ArrayQueue, LinkedListQueue,
     max_sliding_window,
     reconstruct_queue,
-    PriorityQueue
+    PriorityQueue,
+    MovingAverage,
+    ZigZagIterator
 )
 
 
@@ -102,6 +104,22 @@ class TestPriorityQueue(unittest.TestCase):
         self.assertEqual(4, queue.size())
         self.assertEqual(2, queue.pop())
 
+class TestMovingAverage(unittest.TestCase):
+    def test_MovingAverage(self):
+        m = MovingAverage(3)
+        self.assertEqual(m.next(1), 1)
+        self.assertEqual(m.next(10), (1 + 10) / 2)
+        self.assertEqual(m.next(3), (1 + 10 + 3) / 3)
+        self.assertEqual(m.next(5), (10 + 3 + 5) / 3)
+
+class TestZigZagIterator(unittest.TestCase):
+    def test_ZigZagIterator(self):
+        array_a = [1, 3, 5, 7, 9]
+        array_b = [2, 4, 6, 8, 10]
+        iterator = ZigZagIterator(array_a, array_b)
+        for i in range(1, 11):
+            self.assertEqual(iterator.next(), i)
+        self.assertFalse(iterator.has_next())
 
 if __name__ == "__main__":
     unittest.main()

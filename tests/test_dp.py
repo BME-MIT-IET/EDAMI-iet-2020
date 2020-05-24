@@ -10,10 +10,14 @@ from algorithms.dp import (
     house_robber,
     Job, schedule,
     Item, get_maximum_value,
+    longest_common_subsequence,
     longest_increasing_subsequence,
     longest_increasing_subsequence_optimized,
     longest_increasing_subsequence_optimized2,
-    int_divide
+    int_divide,
+    num_decodings, num_decodings2,
+    word_break,
+    Solution
 )
 
 
@@ -79,12 +83,13 @@ class TestFib(unittest.TestCase):
     def test_fib_iter(self):
         self.assertEqual(fib_iter(10), 55)
         self.assertEqual(fib_iter(30), 832040)
+        self.assertEqual(fib_iter(0), 0)
 
 
 class TestHosoyaTriangle(unittest.TestCase):
     """[summary]
     Test for the file hosoya_triangle
-    
+
     Arguments:
         unittest {[type]} -- [description]
     """
@@ -140,13 +145,13 @@ class TestLongestIncreasingSubsequence(unittest.TestCase):
 class TestLongestIncreasingSubsequenceOptimized(unittest.TestCase):
     def test_longest_increasing_subsequence_optimized(self):
         sequence = [1, 101, 10, 2, 3, 100, 4, 6, 2]
-        self.assertEqual(5, longest_increasing_subsequence(sequence))
+        self.assertEqual(5, longest_increasing_subsequence_optimized(sequence))
 
 
 class TestLongestIncreasingSubsequenceOptimized2(unittest.TestCase):
     def test_longest_increasing_subsequence_optimized2(self):
         sequence = [1, 101, 10, 2, 3, 100, 4, 6, 2]
-        self.assertEqual(5, longest_increasing_subsequence(sequence))
+        self.assertEqual(5, longest_increasing_subsequence_optimized2(sequence))
 
 
 class TestIntDivide(unittest.TestCase):
@@ -155,6 +160,77 @@ class TestIntDivide(unittest.TestCase):
         self.assertEqual(42, int_divide(10))
         self.assertEqual(204226, int_divide(50))
 
+class TestLongestCommonSubsequence(unittest.TestCase):
+    def test_longest_common_subsequence(self):
+        self.assertEqual(longest_common_subsequence('abcdgh', 'aedfhr'), 3)
+        self.assertEqual(longest_common_subsequence('abc', 'adbdcd'), 3)
+        self.assertEqual(longest_common_subsequence('', ''), 0)
+        self.assertEqual(longest_common_subsequence('aaa', 'zzz'), 0)
+
+class TestNumDecodings(unittest.TestCase):
+    def test_num_decodings(self):
+        self.assertEqual(num_decodings('5'), 1)
+        self.assertEqual(num_decodings2('5'), 1)
+        self.assertEqual(num_decodings('12'), 2)
+        self.assertEqual(num_decodings2('12'), 2)
+
+class TestWordBreak(unittest.TestCase):
+    def test_word_break_found(self):
+        string = "redrum"
+        dictionary = ["red", "rum"]
+        self.assertTrue(word_break(string, dictionary))
+
+    def test_word_break_not_found(self):
+        string = "redrum"
+        dictionary = ["redd", "rum"]
+        self.assertFalse(word_break(string, dictionary))
+
+class TestRegexSolution(unittest.TestCase):
+    def test_none_0(self):
+        s = ""
+        p = ""
+        self.assertTrue(Solution().is_match(s, p))
+
+    def test_none_1(self):
+        s = ""
+        p = "a"
+        self.assertFalse(Solution().is_match(s, p))
+
+    def test_no_symbol_equal(self):
+        s = "abcd"
+        p = "abcd"
+        self.assertTrue(Solution().is_match(s, p))
+
+    def test_no_symbol_not_equal_0(self):
+        s = "abcd"
+        p = "efgh"
+        self.assertFalse(Solution().is_match(s, p))
+
+    def test_no_symbol_not_equal_1(self):
+        s = "ab"
+        p = "abb"
+        self.assertFalse(Solution().is_match(s, p))
+
+    def test_symbol_0(self):
+        s = ""
+        p = "a*"
+        self.assertTrue(Solution().is_match(s, p))
+
+    def test_symbol_1(self):
+        s = "a"
+        p = "ab*"
+        self.assertTrue(Solution().is_match(s, p))
+
+    def test_symbol_2(self):
+        # E.g.
+        #   s a b b
+        # p 1 0 0 0
+        # a 0 1 0 0
+        # b 0 0 1 0
+        # * 0 1 1 1
+        s = "abb"
+        p = "ab*"
+        self.assertTrue(Solution().is_match(s, p))
 
 if __name__ == '__main__':
     unittest.main()
