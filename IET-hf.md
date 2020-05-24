@@ -1,7 +1,7 @@
 # Ismerkedés a kóddal
 Ha tesztelni akarjuk az implementáció egy specifikus részét, akkor azt a következő módon próbálhatjuk ki,és sikeres lefutás esetén a következő üzenetet kapjuk:
 
-![kep1](\images\kep1.PNG)
+![kep1](https://raw.githubusercontent.com/BME-MIT-IET/EDAMI-iet-2020/master/images/kep1.PNG)
 
 
 Ha az összes tesztet szeretnénk lefuttatni, akkor azt a következő módon tehetjük meg, és a következő eredményt kapjuk:
