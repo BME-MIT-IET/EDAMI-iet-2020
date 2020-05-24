@@ -1,27 +1,27 @@
 # Ismerkedés a kóddal
 Ha tesztelni akarjuk az implementáció egy specifikus részét, akkor azt a következő módon próbálhatjuk ki,és sikeres lefutás esetén a következő üzenetet kapjuk:
 
-![](\images\kep1.PNG)
+![kep1](\images\kep1.PNG)
 
 
 Ha az összes tesztet szeretnénk lefuttatni, akkor azt a következő módon tehetjük meg, és a következő eredményt kapjuk:
 
-![](\images\kep2.PNG)
+![kep2](\images\kep2.PNG)
 
 
 Ekkor elindulnak a tesztek futásai, majd a végén láthatjuk a kapott eredményt:
 
-![](\images\kep3.PNG)
+![kep3](\images\kep3.PNG)
 
 
 A könyvtárat egy egyszerűbb példakóddal is kipróbálhatjuk:
 
-![](\images\kep4.PNG)
+![kep4](\images\kep4.PNG)
 
 
 Ezt futtatva láthatjuk a helyesen kapott eredményt:
 
-![](\images\kep5.PNG)
+![kep5](\images\kep5.PNG)
 
 ## Összefoglalás
 
