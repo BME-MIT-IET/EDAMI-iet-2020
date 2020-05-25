@@ -1,53 +1,32 @@
-Feature: Graph tarjan
+Feature: Graph bellman ford
 
 	Scenario: Graph 1
-		Given these edges
-			| start | end |
-			| A     | B   |
-			| B     | C   |
-			| B     | E   |
-			| B     | F   |
-			| C     | D   |
-			| C     | G   |
-			| D     | C   |
-			| D     | H   |
-			| E     | A   |
-			| E     | F   |
-			| F     | G   |
-			| G     | F   |
-			| H     | D   |
-			| H     | G   |
-		When I calculate the strongly connected components from the edges
-		Then there is a strongly connected component with these nodes
-			| F | G |
-		And there is a strongly connected component with these nodes
-			| C | D | H |
-		And there is a strongly connected component with these nodes
-			| A | B | E |
+		Given these weighted edges
+			| start | end | weight |
+			| a     | b   | 6      |
+			| a     | e   | 7      |
+			| b     | c   | 5      |
+			| b     | d   | -4     |
+			| b     | e   | 8      |
+			| c     | b   | -2     |
+			| d     | a   | 2      |
+			| d     | c   | 7      |
+			| e     | b   | -3     |
+		Then there is a shortest path from a
 
 	Scenario: Graph 2
-		Given these edges
-			| start | end |
-			| A     | E   |
-			| B     | A   |
-			| C     | B   |
-			| C     | D   |
-			| D     | C   |
-			| E     | B   |
-			| F     | B   |
-			| F     | E   |
-			| F     | G   |
-			| G     | F   |
-			| G     | C   |
-			| H     | G   |
-			| H     | H   |
-			| H     | D   |
-		When I calculate the strongly connected components from the edges
-		Then there is a strongly connected component with these nodes
-			| A | B | E |
-		And there is a strongly connected component with these nodes
-			| C | D |
-		And there is a strongly connected component with these nodes
-			| F | G |
-		And there is a strongly connected component with these nodes
-			| H |
+		Given these weighted edges
+			| start | end | weight |
+			| a     | d   | 3      |
+			| a     | e   | 4      |
+			| b     | a   | 7      |
+			| b     | e   | 2      |
+			| c     | a   | 12     |
+			| c     | d   | 9      |
+			| c     | e   | 11     |
+			| d     | c   | 5      |
+			| d     | e   | 11     |
+			| e     | a   | 7      |
+			| e     | b   | 5      |
+			| e     | d   | 1      |
+		Then there is a shortest path from a

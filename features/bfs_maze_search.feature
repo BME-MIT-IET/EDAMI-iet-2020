@@ -1,59 +1,18 @@
-Feature: BFS
+Feature: BFS Maze search
 
-	Rule: Island count
+	Scenario: Maze path in grid 1
+		Given this grid
+			| 1 | 0 | 1 | 1 | 1 | 1 |
+			| 1 | 0 | 1 | 0 | 1 | 0 |
+			| 1 | 0 | 1 | 0 | 1 | 1 |
+			| 1 | 1 | 1 | 0 | 1 | 1 |
+		When I search for the path on the grid
+		Then the path is 14 steps long
 
-		Scenario: Islands in grid 1
-			Given this grid
-				| 1 | 1 | 1 | 1 | 0 |
-				| 1 | 1 | 0 | 1 | 0 |
-				| 1 | 1 | 0 | 0 | 0 |
-				| 0 | 0 | 0 | 0 | 0 |
-			When I count the islands
-			Then there are 1 islands
-
-		Scenario: Islands in grid 2
-			Given this grid
-				| 1 | 1 | 0 | 0 | 0 |
-				| 1 | 1 | 0 | 0 | 0 |
-				| 0 | 0 | 1 | 0 | 0 |
-				| 0 | 0 | 0 | 1 | 1 |
-			When I count the islands
-			Then there are 3 islands
-
-		Scenario: Islands in grid 2
-			Given this grid
-				| 1 | 1 | 1 | 0 | 0 | 0 |
-				| 1 | 1 | 0 | 0 | 0 | 0 |
-				| 1 | 0 | 0 | 0 | 0 | 1 |
-				| 0 | 0 | 1 | 1 | 0 | 1 |
-				| 0 | 0 | 1 | 1 | 0 | 0 |
-			When I count the islands
-			Then there are 3 islands
-
-		Scenario: Islands in grid 2
-			Given this grid
-				| 1 | 1 | 0 | 0 | 1 | 1 |
-				| 0 | 0 | 1 | 1 | 0 | 0 |
-				| 0 | 0 | 0 | 0 | 0 | 1 |
-				| 1 | 1 | 1 | 1 | 0 | 0 |
-			When I count the islands
-			Then there are 5 islands
-
-	Rule: Maze search
-
-		Scenario: Islands in grid 1
-			Given this grid
-				| 1 | 0 | 1 | 1 | 1 | 1 |
-				| 1 | 0 | 1 | 0 | 1 | 0 |
-				| 1 | 0 | 1 | 0 | 1 | 1 |
-				| 1 | 1 | 1 | 0 | 1 | 1 |
-			When I count the islands
-			Then there are 1 islands
-
-		Scenario: Islands in grid 2
-			Given this grid
-				| 1 | 0 | 0 |
-				| 0 | 1 | 1 |
-				| 0 | 1 | 1 |
-			When I count the islands
-			Then there are 3 islands
+	Scenario: Maze path in grid 2
+		Given this grid
+			| 1 | 0 | 0 |
+			| 0 | 1 | 1 |
+			| 0 | 1 | 1 |
+		When I search for the path on the grid
+		Then no path is found

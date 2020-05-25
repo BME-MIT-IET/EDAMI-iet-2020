@@ -1,30 +1,53 @@
-Feature: BFS Ladder length
+Feature: Graph tarjan
 
-	Scenario: Ladder in words 1
-		Given these words
-			| hot | dot | dog | lot | log |
-		When I search for the ladder from hit to cog through the words
-		Then the ladder is 5 steps long
+	Scenario: Graph 1
+		Given these edges
+			| start | end |
+			| A     | B   |
+			| B     | C   |
+			| B     | E   |
+			| B     | F   |
+			| C     | D   |
+			| C     | G   |
+			| D     | C   |
+			| D     | H   |
+			| E     | A   |
+			| E     | F   |
+			| F     | G   |
+			| G     | F   |
+			| H     | D   |
+			| H     | G   |
+		When I calculate the strongly connected components from the edges
+		Then there is a strongly connected component with these nodes
+			| F | G |
+		And there is a strongly connected component with these nodes
+			| C | D | H |
+		And there is a strongly connected component with these nodes
+			| A | B | E |
 
-	Scenario: Ladder in words 2
-		Given these words
-			| tock | tick | sank | sink | sick |
-		When I search for the ladder from pick to tank through the words
-		Then the ladder is 5 steps long
-
-	Scenario: Ladder in words 3
-		Given these words
-			| hoho | luck |
-		When I search for the ladder from live to life through the words
-		Then the ladder is 1 steps long
-
-	Scenario: Ladder in words 4
-		Given these words
-		When I search for the ladder from ate to ate through the words
-		Then the ladder is 0 steps long
-
-	Scenario: Ladder in words 5
-		Given these words
-			| blahh | blhah |
-		When I search for the ladder from rahul to coder through the words
-		Then no ladder is found
+	Scenario: Graph 2
+		Given these edges
+			| start | end |
+			| A     | E   |
+			| B     | A   |
+			| C     | B   |
+			| C     | D   |
+			| D     | C   |
+			| E     | B   |
+			| F     | B   |
+			| F     | E   |
+			| F     | G   |
+			| G     | F   |
+			| G     | C   |
+			| H     | G   |
+			| H     | H   |
+			| H     | D   |
+		When I calculate the strongly connected components from the edges
+		Then there is a strongly connected component with these nodes
+			| A | B | E |
+		And there is a strongly connected component with these nodes
+			| C | D |
+		And there is a strongly connected component with these nodes
+			| F | G |
+		And there is a strongly connected component with these nodes
+			| H |
